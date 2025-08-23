@@ -11,10 +11,10 @@ public class TesteAluno {
         n = a1.nota1;
         System.out.println(n);
 
-        System.out.println("Nome=" + a1.nome + "Nota1=" + a1.nota1);
+        System.out.println("Nome=" + a1.getAluno() + "Nota1=" + a1.);
 
-        a1.registraNota2(9); // atribuindo a nota2
-        System.out.println(a1.retornaNota2());
+        a1.setNota2(9); // atribuindo a nota2
+        System.out.println(a1.getNota2());
 
         System.out.println(a1.media()); 
 

@@ -1,8 +1,8 @@
 package exemplo_aluno; // necessário indicar o pacote "pasta"
 
 public class Aluno {
-    public String nome;
-    public float nota1;
+    private String nome;
+    private float nota1;
     private float nota2;
 
     // Criação de um construtor, onde só me permite instanciar a classe aluno, se eu passar no mínimo o nome.
@@ -27,12 +27,17 @@ public class Aluno {
         }
     }
 
-    // método para 
-    public float retornaNota2(){
+    // métodos para acessar e setar 
+
+    public String getAluno(){
+        return this.nome;
+    }
+
+    public float getNota2(){
         return this.nota2;
     }
 
-    public void registraNota2(float n2){
+    public void setNota2(float n2){
         this.nota2 = n2;
         if (n2 >= 0 && n2<= 10){
             this.nota2 = n2;
