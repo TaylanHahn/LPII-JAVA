@@ -55,9 +55,39 @@ public class Funcionario {
 
     // Calcula o valor do salario liquido
     public double salarioLiquido(){
-        double liquido = salarioBruto - valorINSS();
+        double liquido = salarioBruto - valorINSS() - valorIR();
         return liquido;
     }
+
+     // Salário Base IR
+     public double salarioBaseIR(){
+        double salarioBase = salarioBruto - valorINSS();
+        return salarioBase;
+    }
+
+    // Taxa do Imposto de Renda
+    public double txIR(){
+        if (salarioBaseIR() <= 1000.00){
+            return 0.00;
+        } else if(salarioBaseIR() > 1000.00 || salarioBaseIR() <= 3000.00){
+            return 0.10;
+        } else if(salarioBaseIR() > 3000.00 || salarioBaseIR() <= 5000.00){
+            return 0.20;
+        } else if(salarioBaseIR() > 5000.00){
+            return 0.30;
+        } else {
+            throw new RuntimeException("Erro na verificação da taxa de IR.");
+        }
+    }
+
+    // Valor do Imposto de Renda
+    public double valorIR(){
+        double valorImpostoRenda = (salarioBaseIR() * txINSS()) / 100;
+        return valorImpostoRenda;
+    }
+
+   
+
 
 // >> SETTERS E GETTERS
     // SET nome

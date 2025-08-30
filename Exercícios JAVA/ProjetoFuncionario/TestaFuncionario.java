@@ -16,7 +16,10 @@ public class TestaFuncionario {
         System.out.println("Salario Bruto: R$ " + f1.getSalarioBruto());
         System.out.println("Taxa do INSS: " + f1.txINSS());
         System.out.println("Valor INSS: R$ " + f1.valorINSS());
-        System.out.println("Salario Liquido: R$ " + f1.salarioLiquido());
         System.out.println("--------------------------------------");
+        System.out.println("Salario Base IR: R$ " + f1.salarioBaseIR());
+        System.out.println("IR: " + f1.txIR());
+        System.out.println("--------------------------------------");
+        System.out.println("Salario Liquido: R$ " + f1.salarioLiquido());
     }
 }
