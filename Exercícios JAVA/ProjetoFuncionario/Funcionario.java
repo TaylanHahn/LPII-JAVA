@@ -69,9 +69,9 @@ public class Funcionario {
     public double txIR(){
         if (salarioBaseIR() <= 1000.00){
             return 0.00;
-        } else if(salarioBaseIR() > 1000.00 || salarioBaseIR() <= 3000.00){
+        } else if(salarioBaseIR() > 1000.00 && salarioBaseIR() <= 3000.00){ // CORREÇÃO: Usado '&&'
             return 0.10;
-        } else if(salarioBaseIR() > 3000.00 || salarioBaseIR() <= 5000.00){
+        } else if(salarioBaseIR() > 3000.00 && salarioBaseIR() <= 5000.00){ // CORREÇÃO: Usado '&&'
             return 0.20;
         } else if(salarioBaseIR() > 5000.00){
             return 0.30;
@@ -82,12 +82,9 @@ public class Funcionario {
 
     // Valor do Imposto de Renda
     public double valorIR(){
-        double valorImpostoRenda = (salarioBaseIR() * txINSS()) / 100;
+        double valorImpostoRenda = salarioBaseIR() * txIR();
         return valorImpostoRenda;
     }
-
-   
-
 
 // >> SETTERS E GETTERS
     // SET nome
@@ -112,7 +109,7 @@ public class Funcionario {
 
     // SET cpf
     public void setCPF(String cpf){
-        this.cpf = "";
+        this.cpf = cpf;
     }
     // GET cpf
     public String getCPF(){
@@ -122,7 +119,7 @@ public class Funcionario {
 
     // SET salarioBruto
     public void setSalarioBruto(double s){
-        this.salarioBruto = 0;
+        this.salarioBruto = s; 
     }
     // GET salarioBruto
     public double getSalarioBruto(){
