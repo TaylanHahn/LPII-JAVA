@@ -15,11 +15,20 @@ public class Funcionario {
         this.salarioBruto = 0;
     }
 
+    // Estava assim, sem o SET 
+    // public Funcionario(String n, char s, String cpf, double sal){
+    //     this.nome = n;
+    //     this.sexo = s;
+    //     this.cpf = cpf;
+    //     this.salarioBruto = sal;
+    // }
+
+    // Mas o CORRETO é colocar o SET dessa forma... pq caso houvesse uma validação na função  SET, ele seria chamado para testar e só assim permitiria a construção da classe.
     public Funcionario(String n, char s, String cpf, double sal){
-        this.nome = n;
-        this.sexo = s;
-        this.cpf = cpf;
-        this.salarioBruto = sal;
+        this.setNome(n);
+        this.setSexo(s);
+        this.setCPF(cpf);
+        this.setSalarioBruto(sal);
     }
 
 // >> MÉTODOS
