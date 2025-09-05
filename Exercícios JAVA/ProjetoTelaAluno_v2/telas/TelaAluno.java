@@ -75,7 +75,7 @@ public class TelaAluno {
   // A aplicação dessa estratégia está no TestaAluno2.java
   // Essa estratégia meio que automatiza a leitura (GET) e a inserção (SET) nos atributos desejados.
   
-  public void leNome(Aluno a) {
+  public void leNome(Aluno a) { // Quando passo um objeto como parâmetro em JAVA, faço uma passagem por referência. È semelhante a um ponteiro em C. 
     System.out.print("Digite o nome: ");
     String s = scan.nextLine();
     a.setNome(s);
@@ -142,4 +142,5 @@ public class TelaAluno {
 
 
 }//TelaAluno.
+
 
