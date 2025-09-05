@@ -108,6 +108,8 @@ public class TelaAluno {
 
   /***************************** Estratégia 3 ******************************/
   // A aplicação dessa estratégia está no TestaAluno3.java
+  // Neste método, ele próprio faz a leitura e ainda instancia o objeto.
+  // Apenas semelhante a "factory", que é um objeto criando outro objeto.
   
   public Aluno leTodosDadosEInstancia() {
     String s = leNome();
@@ -142,5 +144,6 @@ public class TelaAluno {
 
 
 }//TelaAluno.
+
 
 
