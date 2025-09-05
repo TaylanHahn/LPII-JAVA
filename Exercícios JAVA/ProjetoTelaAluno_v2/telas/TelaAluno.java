@@ -73,6 +73,7 @@ public class TelaAluno {
 
   /***************************** Estratégia 2 ******************************/
   // A aplicação dessa estratégia está no TestaAluno2.java
+  // Essa estratégia meio que automatiza a leitura (GET) e a inserção (SET) nos atributos desejados.
   
   public void leNome(Aluno a) {
     System.out.print("Digite o nome: ");
@@ -141,3 +142,4 @@ public class TelaAluno {
 
 
 }//TelaAluno.
+
