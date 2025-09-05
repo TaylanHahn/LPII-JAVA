@@ -49,6 +49,7 @@ public class TelaAluno {
   }
 
   /***************************** Estratégia 1 ******************************/
+  // A aplicação dessa estratégia está no TestaAluno1.java
   
   public String leNome() {
     System.out.print("Digite o nome: ");
@@ -71,6 +72,7 @@ public class TelaAluno {
   }
 
   /***************************** Estratégia 2 ******************************/
+  // A aplicação dessa estratégia está no TestaAluno2.java
   
   public void leNome(Aluno a) {
     System.out.print("Digite o nome: ");
@@ -104,6 +106,7 @@ public class TelaAluno {
   }
 
   /***************************** Estratégia 3 ******************************/
+  // A aplicação dessa estratégia está no TestaAluno3.java
   
   public Aluno leTodosDadosEInstancia() {
     String s = leNome();
@@ -135,5 +138,6 @@ public class TelaAluno {
     //imprime(a);
     System.out.printf("----------------------------------\n");
   }
+
 
 }//TelaAluno.
