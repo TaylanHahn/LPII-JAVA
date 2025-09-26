@@ -32,4 +32,12 @@ public class OperacoesFuncionario {
         f1.setSalarioBruto(f2.getSalarioBruto());
         f2.setSalarioBruto(salarioTempF1);
     }
+
+    // NOVO FUNCIONÀRIO
+    // Cria um novo funcionário com o salário sendo a soma dos salários de outros dois.
+    public static Funcionario novoFuncionario(String n, char s, String cpf, double sal, Funcionario f1, Funcionario f2, Endereco end){
+        double salarioFnovo = f1.getSalarioBruto() + f2.getSalarioBruto();
+        Funcionario f3 = new Funcionario(n, s, cpf, salarioFnovo, end);
+        return f3;
+    }
 }

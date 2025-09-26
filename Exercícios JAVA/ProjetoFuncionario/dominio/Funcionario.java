@@ -6,6 +6,7 @@ public class Funcionario {
     private char sexo;
     private String cpf;
     private double salarioBruto;
+    private Endereco endereco;
 
 // >> CONSTRUTORES
     public Funcionario(){
@@ -13,6 +14,7 @@ public class Funcionario {
         this.sexo = ' ';
         this.cpf = "";
         this.salarioBruto = 0;
+        this.endereco = null;
     }
 
     // Estava assim, sem o SET 
@@ -24,11 +26,12 @@ public class Funcionario {
     // }
 
     // Mas o CORRETO é colocar o SET dessa forma... pq caso houvesse uma validação na função  SET, ele seria chamado para testar e só assim permitiria a construção da classe.
-    public Funcionario(String n, char s, String cpf, double sal){
+    public Funcionario(String n, char s, String cpf, double sal, Endereco end){
         this.setNome(n);
         this.setSexo(s);
         this.setCPF(cpf);
         this.setSalarioBruto(sal);
+        this.setEndereco(end);
     }
 
 // >> MÉTODOS
@@ -95,6 +98,36 @@ public class Funcionario {
         return valorImpostoRenda;
     }
 
+    // Doa salário (implementado na aula 07/09)
+    public void doaSalario(Funcionario f){
+        // pega o salario do objeto, sinalizando com o this
+       double salarioDoado = this.getSalarioBruto();
+
+       // soma o novo salario e seta para o objeto passado como parametro
+       double novoSalarioF = salarioDoado + f.getSalarioBruto();
+       f.setSalarioBruto(novoSalarioF);
+
+       // zera o salario de quem doou
+       this.setSalarioBruto(0);
+
+        System.out.println("--- Operação Realizada ---");
+        System.out.println(this.nome + " doou R$" + salarioDoado + " para " + f.nome);
+        System.out.println("--------------------------");
+    }
+
+    // Troca salario (implementado na aula 07/09)
+    public void trocaSalario(Funcionario f){
+        // armazeno os salario em variaveis
+        double salarioTemp = this.getSalarioBruto();
+        double salarioTempF = f.getSalarioBruto();
+
+        // troco os valores entre eles 
+        this.setSalarioBruto(salarioTempF);
+        f.setSalarioBruto(salarioTemp);
+
+
+    }
+
 // >> SETTERS E GETTERS
     // SET nome
     public void setNome(String n){
@@ -133,6 +166,15 @@ public class Funcionario {
     // GET salarioBruto
     public double getSalarioBruto(){
         return salarioBruto;
+    }
+
+    // SET endereco
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
+    }
+    // GET endereco
+    public Endereco getEndereco(){
+        return endereco;
     }
         
 }
