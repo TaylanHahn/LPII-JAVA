@@ -16,10 +16,6 @@ public class Livro {
         return codigo;
     }
 
-   public void setDisponivel(boolean d){
-        
-   }
-
     public boolean getDisponivel() {
         return disponivel;
     }
@@ -27,5 +23,9 @@ public class Livro {
     public Prateleira getPrateleira(){
         return prateleira;
     }
+
+    public void setDisponivel(boolean d){
+        this.disponivel = d;
+   }
 
 }

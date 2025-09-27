@@ -6,7 +6,6 @@ public class Prateleira {
 
     public Prateleira(int numero, Armario a){
         this.getNumero();
-
         // teste de associação obrigatória
         if(a != null){
             this.getArmario();
